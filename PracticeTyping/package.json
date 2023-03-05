@@ -1,0 +1,24 @@
+{
+  "homepage": "https://YujiOYA.github.io/practiceTyping/",
+  "name": "practicetyping",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "rm": "rm -rf docs",
+    "mv": "mv dist docs",
+    "git": "git add . && git commit && git push origin main",
+    "deploy": "npm run rm && npm run build && npm run mv && npm run git"
+  },
+  "dependencies": {
+    "preact": "^10.11.3"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.5.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0"
+  }
+}
