@@ -182,7 +182,14 @@ export default function Row() {
         <div style={{ boxSizing: "border-box", padding: "8px", display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center", height: "50vh" }}>
           <img src={pokemonImage?.sprites?.back_default} style={{ display: "block", width: "auto", height: "100%", margin: "0px, auto" }} />
           <h2>
-            {sealdName}が　くさむらから　とびだした
+            {sealdName}
+            {console.log(sealdName)}
+            {(sealdName=="")
+            ?<></>
+            :<>
+            が　くさむらから　とびだした
+            </>
+            }
           </h2>
 
         </div>
@@ -192,6 +199,10 @@ export default function Row() {
 
       <div style={{ boxSizing: "border-box", padding: "8px", display: "flex", justifyContent: "space-around", flexDirection: "row", alignItems: "center" }}>
         <button onClick={() => getPokemon()}>つぎのポケモン！</button>
+        {console.log(sealdName)}
+            {(sealdName=="")
+            ?<></>
+            :<>
       <input
         placeholder={"ポケモンの　なまえを　いれよう！"}
         value={value}
@@ -201,6 +212,8 @@ export default function Row() {
         style={{ fontSize: "1.4rem", width:"600px" }}
         
       />
+      </>
+}
       </div>
 
 
