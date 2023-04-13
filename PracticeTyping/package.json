@@ -1,5 +1,5 @@
 {
-  "homepage": "https://YujiOYA.github.io/practiceTyping/",
+  "homepage": "./",
   "name": "practicetyping",
   "private": true,
   "version": "0.0.0",
@@ -8,8 +8,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "rm": "rm -rf docs",
-    "mv": "mv dist docs",
+    "rm": "rm -rf ../docs",
+    "mv": "mv dist ../docs",
     "git": "git add . && git commit && git push origin main",
     "deploy": "npm run rm && npm run build && npm run mv && npm run git"
   },

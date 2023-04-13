@@ -1,0 +1,14 @@
+import { useState } from "preact/hooks"
+import { JSX } from "preact/jsx-runtime"
+
+export const useScore = (oks:number, ngs:number, prevs:number) => {
+
+  const [timeOK, setTimeOK] = useState(oks)
+  const [timeNG, setTimeNG] = useState(ngs)
+  const [score, setScore] = useState(prevs)
+
+  function handleScore(score) {
+    setScore(score)   
+  }
+  return {setScore, score}
+}
