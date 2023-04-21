@@ -10,6 +10,8 @@ export const useSetPokemon = (id:number) => {
   const [isLoading, setLoading] = useState(false)
   const setPokemon = async (id:number) => {
     setLoading(true)
+    console.log("apiをコール！");
+    
     const resSprites = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
     const resName = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
     const dataSprites: DataSprites = await resSprites.json()

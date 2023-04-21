@@ -31,7 +31,7 @@ export default function Row() {
   const [prevScore, setScore] = useState(0)
   const [prevGetPokemons,setGetPokemons] = useState<number[]>([0])
   
-  const changePokemon = () => {
+  function changePokemon(){
     const id = rand()
     setPokemon(id)
     setId(id)
