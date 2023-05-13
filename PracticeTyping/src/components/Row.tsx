@@ -8,11 +8,10 @@ import { useSetPokemon } from "../hooks/useSetPokemon";
 import { useHandleSubmit } from "../hooks/useHandleSubmit";
 import MainWindow from "./MainWindow";
 import FormAnswer from "./FormAnswer";
-import memo from "preact/compat"
+import {memo} from "preact/compat"
 
 
-export default function Row() {
-
+const whole= function whole() {
   const inputEl = useRef<HTMLInputElement>(null)
   inputEl.current?.focus();
 
@@ -79,3 +78,7 @@ export default function Row() {
     </>
   )
 }
+
+const Row = memo(whole)
+
+export default Row
