@@ -15,7 +15,7 @@ type Props = {
 
 const MainWindow = memo((props: Props) => {
   if (props.stateGet) {
-    useEffect(props.changePokemon, [props.stateGet])
+    props.changePokemon
   }
   return (
     <>

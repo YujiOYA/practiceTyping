@@ -1,17 +1,12 @@
-
-import { useCallback, useEffect, useRef, useState } from "preact/hooks"
-import { Retsu } from "../types/Retsu"
-import { JSX } from "preact/jsx-runtime"
-import { DataSprites } from "../types/api/DataSprites";
-import { DataName } from "../types/api/DataName";
+import { useRef, useState } from "preact/hooks"
+import {memo} from "preact/compat"
 import { useSetPokemon } from "../hooks/useSetPokemon";
 import { useHandleSubmit } from "../hooks/useHandleSubmit";
 import MainWindow from "./MainWindow";
 import FormAnswer from "./FormAnswer";
-import {memo} from "preact/compat"
 
 
-const whole= function whole() {
+const Composer= function whole() {
   const inputEl = useRef<HTMLInputElement>(null)
   inputEl.current?.focus();
 
@@ -34,6 +29,7 @@ const whole= function whole() {
     const id = rand()
     setPokemon(id)
     setId(id)
+    setValue("")
   }
   const { handleSubmit, isWrong, timeWrong, stateGet, score, getPokemons } = useHandleSubmit(pokemonName, value, id, changePokemon, prevScore, prevGetPokemons)
   setGetPokemons(getPokemons)
@@ -45,7 +41,7 @@ const whole= function whole() {
 
       <div style={{ boxSizing: "border-box", padding: "8px", display: "flex", justifyContent: "space-around", flexDirection: "row", alignItems: "center" }}>
         <button onClick={changePokemon}>
-          つぎのポケモン！
+          {(pokemonName==="")?<>スタート！</>:<>つぎのポケモン！</>}
         </button>
         {(sealedName == "")
           ? <></>
@@ -79,6 +75,4 @@ const whole= function whole() {
   )
 }
 
-const Row = memo(whole)
-
-export default Row
+export default Composer

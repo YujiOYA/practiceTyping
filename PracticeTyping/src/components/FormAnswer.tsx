@@ -1,5 +1,6 @@
 import { JSX } from "preact/jsx-runtime";
 import { Ref } from "preact";
+import { memo } from "preact/compat";
 
 
 
@@ -12,9 +13,9 @@ type Props = {
     inputEl: NewType
     stateGet: boolean    
 }
-export default function FormAnswer(props: Props) {
+const FormAnswer = function FormAnswer(props: Props) {
   if(props.stateGet===true){
-    props.handleInput("")
+     props.handleInput("")
   }
 
   return (
@@ -32,3 +33,5 @@ export default function FormAnswer(props: Props) {
             </form>
   )
 }
+
+export default FormAnswer
