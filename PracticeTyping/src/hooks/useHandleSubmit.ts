@@ -1,6 +1,5 @@
 import { useEffect, useState } from "preact/hooks"
 import { JSX } from "preact/jsx-runtime"
-import { collectPokemon } from "../function/collectPokemon"
 
 export const useHandleSubmit = (propsPokemonName: string, value: string, id: number, changePokemon:()=>void, prevScore:number, prevGetPokemon:number[]) => {
 
@@ -43,7 +42,6 @@ export const useHandleSubmit = (propsPokemonName: string, value: string, id: num
       console.log("seikai");
       setIsWring(false);
       setStateGet(true);
-      collectPokemon(id)
 
       setScore(score + 1)
     //  getPokemons.push(id)
