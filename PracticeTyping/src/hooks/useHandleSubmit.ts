@@ -1,13 +1,12 @@
 import { useEffect, useState } from "preact/hooks"
 import { JSX } from "preact/jsx-runtime"
 
-export const useHandleSubmit = (propsPokemonName: string, value: string, id: number, changePokemon:()=>void, prevScore:number, prevGetPokemon:number[]) => {
+export const useHandleSubmit = (propsPokemonName: string, value: string, id: number, changePokemon:()=>void, prevScore:number) => {
 
   const [isWrong, setIsWring] = useState(false)
   const [timeWrong, setTimeWrong] = useState(0)
   const [stateGet, setStateGet] = useState(false)
   const [score, setScore] = useState(prevScore)
-  const getPokemons: number[] = prevGetPokemon
 
   
   function handleSubmit(e: JSX.TargetedEvent<HTMLFormElement, Event>) {
@@ -42,7 +41,6 @@ export const useHandleSubmit = (propsPokemonName: string, value: string, id: num
       console.log("seikai");
       setIsWring(false);
       setStateGet(true);
-
       setScore(score + 1)
     //  getPokemons.push(id)
 
@@ -52,5 +50,5 @@ export const useHandleSubmit = (propsPokemonName: string, value: string, id: num
       }, 3000);
     }
   }
-  return { handleSubmit, isWrong, timeWrong, stateGet, score, getPokemons}
+  return { handleSubmit, isWrong, timeWrong, stateGet, score}
 }

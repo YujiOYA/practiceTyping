@@ -23,7 +23,6 @@ const Composer= function whole() {
   })
   
   const [prevScore, setScore] = useState(0)
-  const [prevGetPokemons,setGetPokemons] = useState<number[]>([0])
   
   function changePokemon(){
     const id = rand()
@@ -31,8 +30,7 @@ const Composer= function whole() {
     setId(id)
     setValue("")
   }
-  const { handleSubmit, isWrong, timeWrong, stateGet, score, getPokemons } = useHandleSubmit(pokemonName, value, id, changePokemon, prevScore, prevGetPokemons)
-  setGetPokemons(getPokemons)
+  const { handleSubmit, isWrong, timeWrong, stateGet, score } = useHandleSubmit(pokemonName, value, id, changePokemon, prevScore)
   
   return (
     <>
