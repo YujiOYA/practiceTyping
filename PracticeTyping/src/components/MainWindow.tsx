@@ -31,7 +31,7 @@ const MainWindow = memo((props: Props) => {
         </div>
         :
         <div style={{ boxSizing: "border-box", padding: "8px", display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center", height: "50vh" }}>
-          {(!props.isLoading)&&<img src={props.pokemonImage?.sprites?.back_default} style={{ display: "block", width: "auto", height: "100%", margin: "0px, auto" }} />}
+          {(!props.isLoading)&&<img src={props.pokemonImage?.sprites?.front_default} style={{ display: "block", width: "auto", height: "100%", margin: "0px, auto" }} />}
           <h2>
             {(props.sealedName == "")
               ? <></>
