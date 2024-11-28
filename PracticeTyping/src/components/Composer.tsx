@@ -10,8 +10,8 @@ const Composer= function whole() {
   const inputEl = useRef<HTMLInputElement>(null)
   inputEl.current?.focus();
 
-  const min = 906;
-  const max = 1010;
+  const min = 1;
+  const max = 151;
   const rand = () => { return Math.floor(Math.random() * (max + 1 - min)) + min }
   const [id, setId] = useState(rand)
   
