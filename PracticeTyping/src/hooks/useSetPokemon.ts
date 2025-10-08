@@ -2,16 +2,14 @@ import { DataSprites } from "../types/api/DataSprites"
 import { DataName } from "../types/api/DataName"
 import { useCallback, useEffect, useState } from "preact/hooks";
 
-export const useSetPokemon = (id:number) => {
-  
+export const useSetPokemon = (id: number) => {
+
   const [pokemonName, setPokemonName] = useState("");
   const [sealedName, setSealedName] = useState("");
   const [pokemonImage, setPokemonImage] = useState<DataSprites>();
   const [isLoading, setLoading] = useState(false)
-  const setPokemon = async (id:number) => {
+  const setPokemon = async (id: number) => {
     setLoading(true)
-    console.log("apiをコール！");
-    
     const resSprites = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
     const resName = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
     const dataSprites: DataSprites = await resSprites.json()
@@ -26,7 +24,7 @@ export const useSetPokemon = (id:number) => {
     setPokemonName(dataName.names[9].name)
     setSealedName(sealedName)
     setPokemonImage(dataSprites)
-   setLoading(false) 
+    setLoading(false)
   }
   return { setPokemon, pokemonName, sealedName, pokemonImage, isLoading }
 
